@@ -1,0 +1,15 @@
+.tapsameter{
+    height: 300px; 
+    width: 50px;
+    background-color: blue;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    .taps_rating{
+      height: 0%;
+      background-color: yellow;
+      transition: height 0.7s ease-out;
+    }
+  }
