@@ -3,37 +3,47 @@
 }
 
 .wrapper {
-  position: relative;
   height: 100vh;
   width: 100%;
-  background: #020024;
   background: linear-gradient(344deg, rgba(2, 0, 36, 0) 0%, #0090ff 38%, #0090ff 100%);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .wrapper .content-box {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 2fr 1fr;
   height: 500px;
   width: 500px;
   background-color: #b7efff;
   border-radius: 20px;
+}
+.wrapper .content-box .content-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .wrapper .outer-box {
   position: absolute;
   background-color: #ffdf00;
   height: 50px;
   width: 300px;
+  border-radius: 10px;
 }
 .wrapper .outer-box#top {
-  top: 30px;
+  right: -40px;
+  top: -25px;
 }
 .wrapper .outer-box#bottom {
-  left: 100px;
-  background-color: red;
+  left: -40px;
+  bottom: -25px;
+  background-color: #ffdf00;
 }
 
 .tapsameter {
-  height: 300px;
+  height: 250px;
   width: 50px;
   background-color: blue;
   display: flex;
