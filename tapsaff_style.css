@@ -1,5 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .wrapper {
@@ -24,6 +29,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.wrapper .content-box .content-item.item--1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.wrapper .content-box .content-item.item--1 .weatherIcon {
+  transform: translateY(4px);
 }
 .wrapper .outer-box {
   position: absolute;

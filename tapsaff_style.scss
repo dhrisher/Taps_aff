@@ -1,12 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 $yellow: rgb(255,223,0);
 $blue: rgba(0,144,255,1);
 $light-blue: rgb(183,239,255);
 
 * {
     box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
   }
-
-
 
 .wrapper{
     height: 100vh;
@@ -35,7 +39,13 @@ $light-blue: rgb(183,239,255);
             justify-content: center;
 
             &.item--1{
-
+                display: flex;
+                align-items: center;
+                justify-content:space-around;
+                
+                .weatherIcon{
+                    transform: translateY(4px);
+                }
             }
             &.item--2{
 
