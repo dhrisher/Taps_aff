@@ -55,13 +55,14 @@ $dark-blue:  rgb(0, 124, 158);
                 display: flex;
                 align-items: center;
                 justify-content:space-around;
+                padding-top: 50px;
                 
                 .weatherIcon{
                     transform: translateY(4px);
                 }
             }
             &.item--2{
-
+                padding-top: 50px;
             }
             &.item--3{
 
