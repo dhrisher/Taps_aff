@@ -3,17 +3,18 @@ const temp = document.querySelector(".temperature");
 const tapsRating = document.querySelector(".taps_rating");
 const weatherText = document.querySelector(".weatherText");
 const weatherIcon = document.querySelector(".weatherIcon");
-const date = document.querySelector("#date");
+const date = document.querySelector(".outer-box#top");
 
 fetch(`https:/\/api.weatherapi.com/v1/forecast.json?key=03a7522f574442939ee153422222602&q=${area}&days=7&aqi=no&alerts=no`)
   .then(response => response.json())
   .then(data => {console.log(data);
                 weatherText.innerHTML = `<span>${getCurrentWeatherText(data)}</span>`;
                 weatherIcon.innerHTML = `<img src="${getCurrentWeatherIcon(data)}" alt="Weather Icon">`;
-                temp.innerHTML = `<span>${getCurrentTemp(data)}℃</span>`;
+                temp.innerHTML = `<span>${getCurrentTemp(data)}C</span>`;
                 tapsRating.style.height = getTopRating(data);
-                console.log("local date is "+getCurrentDate(data))
+                date.innerHTML = `<span>${getCurrentDate(data)}</span>`;
                 }
+                
        );
 
 function getCurrentTemp(data){
@@ -79,8 +80,60 @@ function getCurrentDate(data){
     month = "December";
   }
 
+  //get weekday 
 
-  return `day:${day} month:${month} year:${year}`;
+  let weekday = "";
+
+
+  //set up date object for the getDay() method to work with
+  const d = new Date(`${month} ${day}, ${year}`);
+  let wkday = d.getDay()
+
+  switch (new Date().getDay()) {
+    case 0:
+      weekday = "Sunday";
+      break;
+    case 1:
+      weekday = "Monday";
+      break;
+    case 2:
+      weekday = "Tuesday";
+      break;
+    case 3:
+      weekday = "Wednesday";
+      break;
+    case 4:
+      weekday = "Thursday";
+      break;
+    case 5:
+      weekday = "Friday";
+      break;
+    case 6:
+      weekday = "Saturday";
+  }
+
+  
+
+  
+
+  //add ordinal to the date 
+
+  if (day.charAt(1) == "1"){
+    day = day+"st";
+  }
+  if (day.charAt(1) == "2"){
+    day = day+"nd";
+  }
+  if (day.charAt(1) == "3"){
+    day = day+"rd";
+  }
+  else{
+      day = day+"th";
+  }
+
+  //combine values and return 
+
+  return `${weekday} ${day} ${month}`;
 }
 
 function getTopRating(data){
