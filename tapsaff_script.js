@@ -131,6 +131,13 @@ function getCurrentDate(data){
       day = day+"th";
   }
 
+  //remove 0s from single digit dates 
+
+  if (day.charAt(0) == "0"){
+    day = day.substring(1);
+  }
+
+
   //combine values and return 
 
   return `${weekday} ${day} ${month}`;
